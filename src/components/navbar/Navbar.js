@@ -8,26 +8,52 @@ import './NavbarStyles.css'
 
 const Navbar = () => {
     const [nav, setNav] = useState(false)
+    const [focusedButton, setFocusedButton] = useState('Faculty'); // Initialize the focused button
+
     const handleNav = () => setNav(!nav)
 
+    const handleButtonClick = (buttonName) => {
+        setFocusedButton(buttonName);
+    };
+
     return (
-    <div name='home' className={nav ? 'navbar navbar-bg' : 'navbar'}>
-        <div className={nav ? 'logo logo-bg' : 'logo'}>
-            <img src={logo} alt="main logo" style={{ width: '150px' }}/>
+    <div name="home" className={`navbar ${nav ? 'navbar-bg' : ''}`}>
+        <div className={`logo ${nav ? 'logo-bg' : ''}`}>
+          <img src={logo} alt="main logo" style={{ width: '150px' }} />
         </div>
 
-        <ul className="nav-menu" >
+        <ul className="nav-menu">
             <li>
-                <button>Faculty</button>
+                <button
+                    className={`nav-menu__item ${focusedButton === 'Faculty' ? 'focused' : ''}`}
+                    onClick={() => handleButtonClick('Faculty')}
+                >
+                    Faculty
+                </button>
             </li>
             <li>
-                <button>Institution</button>
+                <button
+                    className={`nav-menu__item ${focusedButton === 'Institution' ? 'focused' : ''}`}
+                    onClick={() => handleButtonClick('Institution')}
+                >
+                    Institution
+                </button>
             </li>
             <li>
-                <button>Venue</button>
+                <button
+                    className={`nav-menu__item ${focusedButton === 'Venue' ? 'focused' : ''}`}
+                    onClick={() => handleButtonClick('Venue')}
+                >
+                    Venue
+                </button>
             </li>
             <li>
-                <button>Concept</button>
+                <button
+                    className={`nav-menu__item ${focusedButton === 'Concept' ? 'focused' : ''}`}
+                    onClick={() => handleButtonClick('Concept')}
+                >
+                    Concept
+                </button>
             </li>
         </ul>
 
@@ -36,28 +62,49 @@ const Navbar = () => {
         </div>
 
         <div className="hamburger" onClick={handleNav}>
-            {!nav ? (<HiOutlineMenuAlt4 className='icon' />) : (<AiOutlineClose style={{ color: '#000' }} className='icon' />)}
+            {!nav ? (<HiOutlineMenuAlt4 className='icon' />)
+             : (<AiOutlineClose style={{ color: '#000' }} className='icon' />)}
         </div>
 
         <div className={nav ? 'mobile-menu active' : 'mobile-menu'}>
             <ul className="mobile-nav">
                 <li>
-                    <button>Faculty</button>
+                    <button
+                    className={`mobile-nav__item ${focusedButton === 'Faculty' ? 'focused' : ''}`}
+                    onClick={() => handleButtonClick('Faculty')}
+                    >
+                        Faculty
+                    </button>
                 </li>
                 <li>
-                    <button>Institution</button>
+                    <button
+                    className={`mobile-nav__item ${focusedButton === 'Institution' ? 'focused' : ''}`}
+                    onClick={() => handleButtonClick('Institution')}
+                    >
+                        Institution
+                    </button>
                 </li>
                 <li>
-                    <button>Venue</button>
+                    <button
+                    className={`mobile-nav__item ${focusedButton === 'Venue' ? 'focused' : ''}`}
+                    onClick={() => handleButtonClick('Venue')}
+                    >
+                        Venue
+                    </button>
                 </li>
                 <li>
-                    <button>Concept</button>
+                    <button
+                    className={`mobile-nav__item ${focusedButton === 'Concept' ? 'focused' : ''}`}
+                    onClick={() => handleButtonClick('Concept')}
+                    >
+                        Concept
+                    </button>
                 </li>
             </ul>
 
             <div className="mobile-menu-bottom">
                 <div className="menu-icons">
-                    <button>Account</button>
+                    <button className="menu-icons__item">Account</button>
                 </div>
 
                 <div className="social-icons">

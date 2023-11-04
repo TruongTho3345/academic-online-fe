@@ -22,7 +22,7 @@
     display: flex;
 }
 
-.nav-menu button:focus {
+.nav-menu .focused {
     font-size: 30px;
     font-weight: bold;
     
@@ -43,7 +43,7 @@
     display: none;
 }
 
-button {
+.navbar button {
     padding: 0rem 2rem;
     margin: 0 5px;
     font-size: 20px;
@@ -82,7 +82,7 @@ button {
         border-bottom: 1px solid #ccc;
     }
 
-    .mobile-menu button:focus {
+    .mobile-menu .focused {
         font-size: 30px;
         font-weight: bold;
     }
