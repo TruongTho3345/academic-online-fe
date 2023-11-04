@@ -58,7 +58,7 @@
     transition: 0.3s;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 950px) {
     .mobile-menu {
         display: flex;
         flex-direction: column;
